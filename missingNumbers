@@ -1,0 +1,18 @@
+input_nums = input("Enter the list of number with comma separated:")
+
+inputaslist = list(input_nums)
+
+
+def findmissingnums(inputlist):
+    min = inputlist[0]
+    max = inputlist[len(inputlist) - 1]
+
+    missingvalue = [None]
+    for x in list(range(min, max)):
+        if x not in inputlist:
+            missingvalue.append(x)
+
+    return filter(None, missingvalue)
+
+
+print "Missing values are ", findmissingnums(inputaslist)
